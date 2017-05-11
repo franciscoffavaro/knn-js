@@ -1,0 +1,30 @@
+{
+  "name": "knn-javascript",
+  "version": "1.0.0",
+  "description": "Algoritmo de Classificação KNN implementado para a disciplina de Inteligência Artificial do Campus IV - UFPB. Professor: Yuri Malheiros. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoffavaro/knn-js.git"
+  },
+  "keywords": [
+    "knn",
+    "machine",
+    "learning",
+    "ia",
+    "javascript"
+  ],
+  "author": "Francisco Favaro <franciscoffavaro@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/franciscoffavaro/knn-js/issues"
+  },
+  "homepage": "https://github.com/franciscoffavaro/knn-js#readme",
+  "dependencies": {
+    "fast-csv": "^2.4.0",
+    "fs": "0.0.1-security"
+  }
+}
