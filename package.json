@@ -24,7 +24,14 @@
   },
   "homepage": "https://github.com/franciscoffavaro/knn-js#readme",
   "dependencies": {
+    "csv": "^1.1.1",
+    "csv-parse": "^1.2.0",
+    "d3-request": "^1.0.5",
     "fast-csv": "^2.4.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
   }
 }

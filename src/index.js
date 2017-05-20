@@ -1,5 +1,17 @@
 "use strict"
 
-/**Import de dependências do Projeto */
 const fs = require('fs');
-const fastCsv = require('fast-csv');
+const csv = require('fast-csv');
+
+
+
+const readCsv = (path) => {
+    let array = []
+    fs.createReadStream(path)
+        .pipe(csv())
+        .on('data', (data) => {
+            console.log(data)
+        });
+}
+
+readCsv('../files/treinamento.csv')
