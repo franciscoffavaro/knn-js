@@ -1,10 +1,6 @@
-"use strict"
-//Importos das Funções para Leitura e Organização de Elementos.
 const fs = require('fs');
 const math = require('mathjs');
 const _ = require('lodash');
-
-//Retorna a distância Euclidiana. 
 const euclidianDistance = (rose1, rose2) => {
     const soma = math.pow(parseFloat(rose1.split(',')[0]) - parseFloat(rose2.split(',')[0]), 2) +
         math.pow(parseFloat(rose1.split(',')[1]) - parseFloat(rose2.split(',')[1]), 2) +
@@ -12,8 +8,6 @@ const euclidianDistance = (rose1, rose2) => {
         math.pow(parseFloat(rose1.split(',')[3]) - parseFloat(rose2.split(',')[3]), 2);
     return math.sqrt(soma);
 };
-
-//Classificação dos Elementos. 
 const calcularDiferença = (roses, nova_rose, k) => {
     let contk = 0;
     const tamRoses = roses.length;
@@ -48,28 +42,4 @@ const calcularDiferença = (roses, nova_rose, k) => {
     }
 }
 
-//Leitura dos Arquivos de Treinamento, teste e rótulo.
-const treinamento = fs.readFileSync('./files/treinamento.csv', 'utf8').split('\n');
-const teste = fs.readFileSync('./files/teste.csv', 'utf8').split('\n');
-const rotulo_teste = fs.readFileSync('./files/rotulos-teste.txt', 'utf8').split('\n');
-
-//Função Principal. 
-const main = () => {
-    const k = 3;
-    const tam_treinamento = treinamento.length;
-    const tam_teste = teste.length;
-    let resultado = []
-    let acertos = 0;
-
-    for (let i = 0; i < tam_teste; i++) {
-        resultado.push(calcularDiferença(treinamento, teste[i], k));
-        if (parseInt(rotulo_teste[i]) === calcularDiferença(treinamento, teste[i], k)) {
-            acertos++
-        }
-        fs.appendFileSync('resultado.txt', calcularDiferença(treinamento, teste[i], k) + '\n');
-    }
-    console.log('A eficiência foi de: ', ((acertos / tam_teste) * 100), 'somando ', acertos, ' acertos');
-    console.log('resultado.txt criado com sucesso');
-}
-
-main(); //Execução.
+module.exports = 'core';
